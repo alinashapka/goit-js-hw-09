@@ -78,3 +78,11 @@ const galleryMarkup = images.map(({ preview, original, description }) =>
 </li>`).join("");
 
 gallery.insertAdjacentHTML("beforeend", galleryMarkup);
+
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+let lightbox = new SimpleLightbox(".gallery-link", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
