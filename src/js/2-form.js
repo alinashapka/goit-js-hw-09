@@ -24,8 +24,8 @@ if (savedData) {
     form.email.value = savedData.email;
     form.message.value = savedData.message;
 
-    savedData.email = formData.email;
-    savedData.message = formData.message;
+    formData.email = savedData.email;
+    formData.message = savedData.message;
 };
 
 form.addEventListener("submit", (event) => {
@@ -38,6 +38,6 @@ form.addEventListener("submit", (event) => {
 
     console.log(formData);
     form.reset();
-    localStorage.removeItem("feedback-form-stare");
+    localStorage.removeItem("feedback-form-state");
     Object.keys(formData).forEach(key => formData[key] = "");
 });
